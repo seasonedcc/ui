@@ -1,1 +1,2 @@
-export { LIBRARY_NAME } from './LIBRARY_NAME'
+export { ResponsiveTable } from './responsive-table/ResponsiveTable'
+export { Evaluator } from './reviews/Evaluator'

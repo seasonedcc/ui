@@ -32,14 +32,28 @@ body {
 .App > div {
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.MuiPaper-root {
+.sample-card {
   flex: 1;
   text-align: left;
   margin: 2rem;
-  max-width: 860px;
+  max-width: 98vw;
   overflow: visible !important;
+}
+
+.sample-card.home-page {
+  width: 600px;
+}
+
+.example-responsive-table .sample-card {
+  width: 980px;
+}
+
+.sample-card .MuiPaper-root {
+  margin: 1rem auto;
 }
 
 .rating .MuiCardContent-root {

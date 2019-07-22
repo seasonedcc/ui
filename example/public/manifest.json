@@ -1,6 +1,6 @@
 {
-  "short_name": "new-react-lib",
-  "name": "new-react-lib",
+  "short_name": "ui",
+  "name": "ui",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

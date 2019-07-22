@@ -1,52 +1,15 @@
-# LIBRARY_NAME
+# Seasoned UI
 
-## Setup
+## Install
 
-#### Dependencies
-
-- Node v11.1.0
-- [yarn](https://yarnpkg.com/pt-BR/)
-
-#### Clone this repository
-And replace `$$your-project-name$$` with your new package's name.
-
-```
-$ git clone https://github.com/SeasonedSoftware/new-react-lib.git $$your-project-name$$
-$ cd $$your-project-name$$/
+```bash
+yarn add @seasonedsoftware/ui
 ```
 
-#### Install dependencies and run the scaffold
+## Usage
 
-```
-$ yarn
-```
+Check [the samples](https://seasonedsoftware.github.io/ui/).
 
-#### Set up some configs
+## License
 
-Run the following command and follow the instructions on terminal:
-
-```
-$ yarn scaffold
-$ rm -rf scripts/
-$ yarn remove readline-promise replace-in-file
-$ git add .
-$ git commit -m "Initial commit"
-```
-
-#### Run the server
-
-```
-$ yarn start
-```
-
-#### Setup the example app
-
-Open another terminal tab from the same root folder and run:
-
-```
-$ cd example/
-$ yarn
-$ yarn start
-```
-
-# There you go!
+MIT © [Seasoned](https://github.com/SeasonedSoftware)

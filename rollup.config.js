@@ -12,7 +12,14 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx']
 const config = {
   input: './src/index.ts',
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
-  external: ['react', 'react-dom'],
+  external: [
+    'lodash',
+    '@seasonedsoftware/utils',
+    '@material-ui/core',
+    '@material-ui/icons',
+    'react',
+    'react-dom',
+  ],
   plugins: [
     // Allows node_modules resolution
     resolve({ extensions }),
