@@ -1,2 +1,3 @@
 export { ResponsiveTable } from './responsive-table/ResponsiveTable'
-export { Evaluator } from './reviews/Evaluator'
+export { Evaluator } from './evaluator/Evaluator'
+// export { Snackbar } from './snackbar/Snackbar'

@@ -17,6 +17,7 @@ const config = {
     '@seasonedsoftware/utils',
     '@material-ui/core',
     '@material-ui/icons',
+    '@material-ui/labs',
     'react',
     'react-dom',
   ],

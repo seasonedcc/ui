@@ -10,6 +10,7 @@ import { Subject, BaseProps, SubjectObject } from './typeDeclarations'
 interface EvaluatorProps extends BaseProps {
   onChange?: (t: any) => void
   enableComment?: boolean
+  name?: string
   commentLabel?: string
   subjects: Subject[]
 }
@@ -17,14 +18,16 @@ interface EvaluatorProps extends BaseProps {
 const EvaluatorComponent = ({
   onChange,
   subjects,
+  name = 'rating',
   commentLabel,
   enableComment,
-  initialRating = 0,
+  value = 0,
   ...props
 }: EvaluatorProps): JSX.Element => {
   const formatter = (subject: Subject) =>
-    formatSubject(subject, props.length, initialRating)
-  const formatedSubjects = useMemo(() => subjects.map(formatter), [])
+    formatSubject(subject, props.max, value)
+  const defaultSubjects = subjects || [name]
+  const formatedSubjects = useMemo(() => defaultSubjects.map(formatter), [])
   const allSubjects = initSubjects(formatedSubjects)
 
   const [state, setState] = useState(allSubjects)
@@ -32,11 +35,12 @@ const EvaluatorComponent = ({
 
   useOnMount(() => onChange && onChange(state))
 
-  const onChangeRating = (name: string, rating: number) => {
-    if (!onChange) return undefined
-    const newState = { ...state, [name]: rating }
+  const onChangeRating = (name: string, value: number) => {
+    const newState = { ...state, [name]: value }
     setState(newState)
-    return onChange(enableComment ? { ...newState, comment } : newState)
+    return onChange
+      ? onChange(enableComment ? { ...newState, comment } : newState)
+      : undefined
   }
 
   const updateComment = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -54,8 +58,8 @@ const EvaluatorComponent = ({
             key={index}
             onChange={onChangeRating}
             subject={subject}
-            rating={state[subject.name]}
-            showLabel={subjects.length > 1}
+            value={state[subject.name]}
+            showLabel={formatedSubjects.length > 1}
             {...props}
           />
         )
@@ -76,8 +80,7 @@ const EvaluatorComponent = ({
 EvaluatorComponent.defaultProps = {
   commentLabel: 'Leave your comment',
   enableComment: false,
-  disabled: false,
-  subjects: ['rating'],
+  readOnly: false,
 }
 
 export const Evaluator = memo(EvaluatorComponent)

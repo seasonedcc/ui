@@ -13,8 +13,13 @@ const App = () => (
   <div className="App">
     <Router basepath={basePath}>
       <Home path="/" />
-      <Example title="Responsive Table" Component={Table} path="/table" />
-      <Example title="Reviews" Component={Reviews} path="/reviews" />
+      <Example
+        title="Responsive Table"
+        Component={Table}
+        path="/responsive-table"
+      />
+      <Example title="Reviews" Component={Reviews} path="/evaluator" />
+      <Example title="Snackbar" Component={Reviews} path="/snackbar" />
     </Router>
   </div>
 )

@@ -20,8 +20,9 @@ export default () => {
       <CardHeader title="UI Components" />
       <CardContent>
         <div style={{ display: 'grid', gridGap: 10 }}>
-          <Bt to="table">Responsive Table</Bt>
-          <Bt to="reviews">Reviews</Bt>
+          <Bt to="responsive-table">Responsive Table</Bt>
+          <Bt to="evaluator">Evaluator</Bt>
+          <Bt to="snackbar">Snackbar</Bt>
         </div>
       </CardContent>
     </Card>

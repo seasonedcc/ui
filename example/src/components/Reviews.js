@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SampleCard from 'example/SampleCard'
-import { Favorite, FavoriteBorder } from '@material-ui/icons'
+import { Favorite, FavoriteBorder, Star } from '@material-ui/icons'
 import { Divider, Typography } from '@material-ui/core'
 import { Evaluator } from '@seasonedsoftware/ui'
 
@@ -18,9 +18,9 @@ export default () => {
 import { Evaluator } from '@seasonedsoftware/ui'
 
 // MyComponent
-<Evaluator disabled length={10} initialRating={8.3} />`}
+<Evaluator readOnly max={10} allowHalf value={8.3} />`}
       >
-        <Evaluator disabled length={10} initialRating={8.3} />
+        <Evaluator readOnly max={10} allowHalf value={8.3} />
       </SampleCard>
       <SampleCard
         title="Rate"
@@ -34,19 +34,19 @@ const changeFavorite = ({ rating }) => {
 }
 return (
   <Evaluator
-    length={3}
-    iconEmpty={<FavoriteBorder color="secondary" />}
-    iconFull={<Favorite color="secondary" />}
-    disabled={!!favorite}
+    max={3}
+    icon={<Favorite color="secondary" />}
+    emptyIcon={<FavoriteBorder color="secondary" />}
+    readOnly={!!favorite}
     onChange={changeFavorite}
   />
 )`}
       >
         <Evaluator
-          length={3}
-          iconEmpty={<FavoriteBorder color="secondary" />}
-          iconFull={<Favorite color="secondary" />}
-          disabled={!!favorite}
+          max={3}
+          emptyIcon={<FavoriteBorder color="secondary" />}
+          icon={<Favorite color="secondary" />}
+          readOnly={!!favorite}
           onChange={changeFavorite}
         />
       </SampleCard>
@@ -57,16 +57,18 @@ import { Evaluator } from '@seasonedsoftware/ui'
 
 // MyComponent
 <Evaluator
-  length={1}
-  iconEmpty={<FavoriteBorder style={{ fontSize: 50 }} />}
-  iconFull={<Favorite style={{ fontSize: 50 }} />}
-  onChange={values => tellBackendThatILike(!!values.rating)}
+  max={1}
+  name="like"
+  icon={<Favorite color="secondary" />}
+  emptyIcon={<FavoriteBorder color="secondary" />}
+  onChange={({ like }) => tellBackendThatILike(!!like)}
 />`}
       >
         <Evaluator
-          length={1}
-          iconEmpty={<FavoriteBorder style={{ fontSize: 50 }} />}
-          iconFull={<Favorite style={{ fontSize: 50 }} />}
+          max={1}
+          name="like"
+          emptyIcon={<FavoriteBorder color="secondary" />}
+          icon={<Favorite color="secondary" />}
           onChange={values => console.log(values)}
         />
       </SampleCard>
@@ -77,26 +79,30 @@ import { Evaluator } from '@seasonedsoftware/ui'
 
 // MyComponent
 const [value, setValue] = useState('')
-return (
-  <>
-    <Evaluator
-      subjects={[
-        'Overral',
-        { name: 'Sound', length: 3, initial: 2.4 },
-        { name: 'Drinks', title: 'Soft Drinks', initial: 4 },
-      ]}
-      commentLabel="Review"
-      onChange={setValue}
-    />
-    {JSON.stringify(value)}
-  </>
-)`}
+return [
+  <Evaluator
+    allowHalf
+    emptyIcon={<Star />}
+    icon={<Star color="secondary" />}
+    subjects={[
+      'Overral',
+      { name: 'Sound', max: 3, value: 2.4 },
+      { name: 'Drinks', title: 'Soft Drinks', value: 4 },
+    ]}
+    commentLabel="Review"
+    onChange={setValue}
+  />,
+  {JSON.stringify(value)}
+]`}
       >
         <Evaluator
+          allowHalf
+          emptyIcon={<Star />}
+          icon={<Star color="secondary" />}
           subjects={[
             'Overral',
-            { name: 'Sound', length: 3, initial: 2.4 },
-            { name: 'Drinks', title: 'Soft Drinks', initial: 4 },
+            { name: 'Sound', max: 3, value: 2.4 },
+            { name: 'Drinks', title: 'Soft Drinks', value: 4 },
           ]}
           commentLabel="Review"
           onChange={setValue}
