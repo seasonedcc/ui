@@ -9,6 +9,7 @@
     "@material-ui/icons": "link:../node_modules/@material-ui/icons",
     "@reach/router": "latest",
     "@seasonedsoftware/ui": "link:..",
+    "@seasonedsoftware/utils": "^0.0.2",
     "prop-types": "latest",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",

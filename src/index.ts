@@ -1,3 +1,4 @@
 export { ResponsiveTable } from './responsive-table/ResponsiveTable'
 export { Evaluator } from './evaluator/Evaluator'
-// export { Snackbar } from './snackbar/Snackbar'
+export { SnackbarProvider } from './snackbar/SnackbarProvider'
+export { useSnackbar } from './snackbar/useSnackbar'

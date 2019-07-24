@@ -56,10 +56,10 @@ body {
   margin: 1rem auto;
 }
 
-.rating .MuiCardContent-root {
-  align-items: center;
+.snackwrapper {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 a {

@@ -4,8 +4,9 @@ import basePath from './basePath'
 import Home from './Home'
 import Example from './example/index'
 
-import Table from 'components/Table'
 import Reviews from 'components/Reviews'
+import Snackbar from 'components/Snackbar'
+import Table from 'components/Table'
 
 import './App.css'
 
@@ -19,7 +20,7 @@ const App = () => (
         path="/responsive-table"
       />
       <Example title="Reviews" Component={Reviews} path="/evaluator" />
-      <Example title="Snackbar" Component={Reviews} path="/snackbar" />
+      <Example title="Snackbar" Component={Snackbar} path="/snackbar" />
     </Router>
   </div>
 )
