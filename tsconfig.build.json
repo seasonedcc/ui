@@ -11,29 +11,13 @@
     "declarationDir": "dist/types",
     "declaration": true,
     "target": "es2015",
-    "module": "esnext",
+    "module": "es2015",
     "strict": true,
     "strictNullChecks": true,
     "sourceMap": true,
     "pretty": true,
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "jsx": "react"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
