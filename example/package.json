@@ -14,7 +14,8 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "latest",
-    "react-syntax-highlighter": "^11.0.2"
+    "react-syntax-highlighter": "^11.0.2",
+    "react-use-form-state": "^0.11.0"
   },
   "scripts": {
     "start": "react-scripts start",

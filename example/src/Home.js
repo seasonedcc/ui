@@ -23,6 +23,7 @@ export default () => {
           <Bt to="responsive-table">Responsive Table</Bt>
           <Bt to="evaluator">Evaluator</Bt>
           <Bt to="snackbar">Snackbar</Bt>
+          <Bt to="credit-card">Credit Card</Bt>
         </div>
       </CardContent>
     </Card>

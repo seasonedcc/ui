@@ -7,6 +7,7 @@ import Example from './example/index'
 import Reviews from 'components/Reviews'
 import Snackbar from 'components/Snackbar'
 import Table from 'components/Table'
+import CreditCardForm from 'components/CreditCardForm'
 
 import './App.css'
 
@@ -21,6 +22,7 @@ const App = () => (
       />
       <Example title="Reviews" Component={Reviews} path="/evaluator" />
       <Example title="Snackbar" Component={Snackbar} path="/snackbar" />
+      <Example title="Credit Card" Component={CreditCardForm} path="/credit-card"/>
     </Router>
   </div>
 )
