@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    foo="bar"
+  >
+    Card
+  </div>,
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
+    style={
+      Object {
+        "margin": "30px 0",
+      }
+    }
+  >
+    <div
+      foo="bar"
+      handleFocus={[Function]}
+    >
+      FormFields
+    </div>
+  </div>,
+]
+`;

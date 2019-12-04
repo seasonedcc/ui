@@ -20,3 +20,5 @@ export const CreditCard = (props:any) => {
     </>
   )
 }
+
+export default CreditCard
