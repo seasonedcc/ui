@@ -3,7 +3,7 @@ import SampleCard from 'example/SampleCard'
 import { CreditCard } from '@seasonedsoftware/ui'
 import { useFormState } from 'react-use-form-state'
 
-const ExampleSnack = ({children}) => {
+const ExampleSnack = ({ children }) => {
   return (
     <SampleCard
       code={`
@@ -17,19 +17,23 @@ import { useFormState } from 'react-use-form-state'
 }
 
 const Example = () => {
-  const [ formState, fields ] = useFormState({
+  const [formState, fields] = useFormState({
     cvc: '',
     expiry: '',
     name: '',
     number: '',
   })
   return (
-        <ExampleSnack><CreditCard formState={formState} fields={fields} /></ExampleSnack>
+    <ExampleSnack>
+      <div style={{ padding: '0 40px', maxWidth: 600 }}>
+        <CreditCard formState={formState} fields={fields} />
+      </div>
+    </ExampleSnack>
   )
 }
 
 
 
 export default () => (
-    <Example />
+  <Example />
 )

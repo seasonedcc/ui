@@ -1,6 +1,12 @@
 import React from 'react'
 
-import { ResponsiveTable, Evaluator, SnackbarProvider, useSnackbar } from '..'
+import {
+  ResponsiveTable,
+  Evaluator,
+  SnackbarProvider,
+  useSnackbar,
+  CreditCard,
+} from '..'
 
 jest.mock('../responsive-table/ResponsiveTable', () => ({
   ResponsiveTable: props => <div {...props}>ResponsiveTable</div>,
@@ -8,6 +14,10 @@ jest.mock('../responsive-table/ResponsiveTable', () => ({
 
 jest.mock('../evaluator/Evaluator', () => ({
   Evaluator: props => <div {...props}>Evaluator</div>,
+}))
+
+jest.mock('../credit-card/CreditCard', () => ({
+  CreditCard: props => <div {...props}>Evaluator</div>,
 }))
 
 jest.mock('../snackbar/SnackbarProvider', () => ({
@@ -23,4 +33,5 @@ it('exports correctly', () => {
   expect(Evaluator).not.toBeUndefined()
   expect(SnackbarProvider).not.toBeUndefined()
   expect(useSnackbar).not.toBeUndefined()
+  expect(CreditCard).not.toBeUndefined()
 })
